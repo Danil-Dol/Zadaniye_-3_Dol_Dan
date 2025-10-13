@@ -6,6 +6,12 @@
     <title>Создание</title>
 </head>
 <body>
-    
+    <form action="{{route('reports.store')}}" method="POST">
+        @csrf
+        <input value="Введите госномер" name="number">
+        <p>Введите описание:</p>
+        <textarea name="description"></textarea>
+        <input type="submit" value="Создать">
+    </form>
 </body>
 </html>

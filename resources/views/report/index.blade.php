@@ -6,8 +6,17 @@
     <title>Нарушения.нет</title>
 </head>
 <body>
-@foreach ($number as $num)
-    <p>Это пользователь {{ $num->id }}</p>
+@foreach ($reports as $report)
+    <p> {{ $report->number }} </p>
+    <p> {{ $report->description }} </p>
+    <p> {{ $report->created_at }} </p>
+    <a href="{{ route('reports.edit', $report->id) }}">Обновить</a>
+    <form action="{{route('reports.destroy', $report->id)}}" method="POST">
+        @method('delete')
+        @csrf
+        <input type="submit" value="Удалить">
+    </form>
 @endforeach
+<a href="{{ route('reports.create') }}">Создать заявление</a>
 </body>
 </html>

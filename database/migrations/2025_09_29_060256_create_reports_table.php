@@ -25,6 +25,7 @@ return new class extends Migration
             ->constrained()
             ->cascadeOnUpdate()
             ->nullOnDelete();
+        $table->softDeletes();
         });
     }
 
@@ -35,4 +36,5 @@ return new class extends Migration
     {
         Schema::dropIfExists('reports');
     }
+    
 };
