@@ -8,9 +8,8 @@
 <body>
     <form action="{{route('reports.store')}}" method="POST">
         @csrf
-        <input value="Введите госномер" name="number">
-        <p>Введите описание:</p>
-        <textarea name="description"></textarea>
+        <input placeholder="Введите госномер" name="number">
+        <textarea name="description" placeholder="Введите описание"></textarea>
         <input type="submit" value="Создать">
     </form>
 </body>

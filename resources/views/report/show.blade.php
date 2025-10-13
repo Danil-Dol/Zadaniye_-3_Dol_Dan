@@ -10,7 +10,6 @@
         @csrf
         @method('put')
         <input name="number" value="{{$report->number}}">
-        <p>Введите описание:</p>
         <textarea name="description">{{$report->description}}</textarea>
         <input type="submit" value="Обновить">
     </form>
