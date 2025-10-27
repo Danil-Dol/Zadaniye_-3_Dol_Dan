@@ -7,12 +7,14 @@
     <title>Обновить</title>
 </head>
 <body>
-    <form action="{{route('reports.update', $report->id)}}" method="POST">
-        @csrf
-        @method('put')
-        <input name="number" value="{{$report->number}}">
-        <textarea name="description">{{$report->description}}</textarea>
-        <input type="submit" value="Обновить">
-    </form>
+    <x-app-layout>
+        <form action="{{route('reports.update', $report->id)}}" method="POST">
+            @csrf
+            @method('put')
+            <input name="number" value="{{$report->number}}">
+            <textarea name="description">{{$report->description}}</textarea>
+            <input type="submit" value="Обновить">
+        </form>
+    </x-app-layout>
 </body>
 </html>
