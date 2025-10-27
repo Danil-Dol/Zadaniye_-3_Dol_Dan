@@ -10,8 +10,9 @@ class ReportController extends Controller
     //
     public function index()
     {
-        $reports= Report::all(); //выборка всех данных из таблицы reports
-        return view('report.index', compact('reports'));
+        //$reports= Report::all(); //выборка всех данных из таблицы reports
+        $reports= Report::paginate(8);
+        return view('reports.index', compact('reports'));
     }
 
     public function store (Request $request, Report $report)
@@ -27,7 +28,7 @@ class ReportController extends Controller
 
     public function edit(Request $request, Report $report)
     {
-        return view('report.show', compact('report'));
+        return view('reports.show', compact('report'));
     }
 
     public function update (Request $request, Report $report)
