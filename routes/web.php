@@ -19,7 +19,9 @@ Route::middleware('auth')->group(function () {
 
     //Route::get('/reports', [ReportController::class, 'index'])->name('reports.index');
     Route::get('/reports', [ReportController::class, 'index'])->name('reports.index');
-    Route::get('/reports/create', [ReportController::class, 'index'])->name('reports.create');
+   Route::get('/reports/create', function () {
+    return view('reports.create');
+})->name('reports.create');
     Route::post('/reports', [ReportController::class, 'store'])->name('reports.store');
     Route::get('/reports/{report}', [ReportController::class, 'show'])->name('reports.show');
     Route::get('/reports/{report}/edit', [ReportController::class, 'edit'])->name('reports.edit');
@@ -41,13 +43,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/reports/{reports}', [ReportController::class, 'destroy'])->name('reports.destroy');
 });*/
 
-Route::get('/reports', function () {
-    return view('reports.index');
-})->name('reports.index');
 
-Route::get('/reports/create', function () {
-    return view('report.create');
-})->name('reports.create');
+
 
 
 

@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <title>Создание</title>
-</head>
-<body>
+
     <x-app-layout>
         <form action="{{route('reports.store')}}" method="POST">
             @csrf
@@ -15,5 +7,3 @@
             <input type="submit" value="Создать">
         </form>
     </x-app-layout>
-</body>
-</html>

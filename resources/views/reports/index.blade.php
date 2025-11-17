@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <title>Нарушения.нет</title>
-</head>
-<body>
+
     <x-app-layout>
         <div>
             <span>Сортировка по дате создания: </span>
@@ -38,7 +30,6 @@
         </form>
     @endforeach
     {{ $reports->links() }}
+    <a href="{{ route('reports.create') }}">Создать заявление</a>
     </x-app-layout>
-<a href="{{ route('reports.create') }}">Создать заявление</a>
-</body>
-</html>
+
