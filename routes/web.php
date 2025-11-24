@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReportController;
+use App\Http\Middleware\Admin;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -43,7 +45,12 @@ Route::middleware('auth')->group(function () {
     Route::delete('/reports/{reports}', [ReportController::class, 'destroy'])->name('reports.destroy');
 });*/
 
-
+Route::middleware((Admin::class))->group(function()
+{
+    Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+    Route::patch('/reports/status/{report}/', [ReportController::class, 'statusUpdate'])
+                -> name('reports.status.update');
+});
 
 
 
