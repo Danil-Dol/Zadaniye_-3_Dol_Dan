@@ -17,7 +17,7 @@
                                     Создана: {{ $report->created_at->format('d.m.Y H:i') }}
                                 </p>
                                 <p class="text-xs text-gray-400">
-                                    Автор: {{ $report->user->name }}
+                                    
                                 </p>
                             </div>
                             
